@@ -44,6 +44,7 @@ public class UpperCaseCounterTest {
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
         assertThat(result, is(10));
+        System.out.println("result :: " + result);
     }
 
     //대소문자가 섞여 있을 때 정확히 카운팅 되는 지에 대한 테스트 코드 작성
@@ -52,15 +53,15 @@ public class UpperCaseCounterTest {
     {
         String str = "ABCdefGHI";
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-        //assertTrue로 맞는 테스트 코드 작성
-        //assertFalse로 틀리는 값을 넣어 테스트 작성
-        //assertThat 단정문을 사용해서 True인 테스트 코드 작성
+
+        assertFalse(result != 6);
         System.out.println("result :: " + result);
     }
 
     //잘못된 값을 참조했을 때 IndexOutOfBoundsException Exception이 발생하는지 테스트 코드 작성
     @Test
-    public void shouldThrowExceptionWhenGetZeroIndex() {
+    public void shouldThrowExceptionWhenGetZeroIndex()
+    {
         new ArrayList<Object>().get(0);
     }
 
