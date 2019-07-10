@@ -29,6 +29,7 @@ public class UpperCaseCounterTest {
         String str = "";
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
+        
         assertThat(result, is(0));
         System.out.println("result :: " + result);
 
