@@ -12,23 +12,32 @@ public class UpperCaseCounterTest {
 
     //null을 전달했을 때 0을 리턴하는지에 대한 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input(){
+    public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input()
+    {
         String str = null;
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result, is(0));
+        System.out.println("result :: " + result);
+
     }
 
     //반겂울 전달했을 때 0을 리턴하는지에 대한 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_0_for_empty_input() {
+    public void getNumberOfUpperCaseCharactersInString_return_0_for_empty_input()
+    {
         String str = "";
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result, is(0));
+        System.out.println("result :: " + result);
+
     }
 
     //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_10_for_ABCDEFGHIJ() {
+    public void getNumberOfUpperCaseCharactersInString_return_10_for_ABCDEFGHIJ()
+    {
         String str = "ABCDEFGHIJ";
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
@@ -40,7 +49,8 @@ public class UpperCaseCounterTest {
 
     //대소문자가 섞여 있을 때 정확히 카운팅 되는 지에 대한 테스트 코드 작성
     @Test
-    public void getNumberOfUpperCaseCharacterInString_return_6_for_ABCdefGHI(){
+    public void getNumberOfUpperCaseCharacterInString_return_6_for_ABCdefGHI()
+    {
         String str = "ABCdefGHI";
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
         //assertTrue로 맞는 테스트 코드 작성
